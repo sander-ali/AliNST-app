@@ -1,1 +1,1 @@
-web: gunicorn app:alinst-app
+web: gunicorn app:app
