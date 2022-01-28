@@ -9,7 +9,7 @@ kiwisolver
 MarkupSafe
 matplotlib
 numpy
-opencv-python
+opencv-python-headless
 pyparsing
 python-dateutil
 six
