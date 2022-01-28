@@ -15,7 +15,7 @@ def index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	target = os.path.join(APP_ROOT, 'images\\')
+	target = os.path.join(APP_ROOT, 'images/')
 	print("TARGET", target)
 
 	if not os.path.isdir(target):
@@ -41,11 +41,11 @@ def send_original_image(filename):
 
 @app.route('/complete/<filename>/<selected_style>')
 def send_processed_image(filename, selected_style):
-    directoryName = os.path.join(APP_ROOT, 'images\\')
+    directoryName = os.path.join(APP_ROOT, 'images/')
     
     newImg = neuralStyleProcess.neuralStyleTransfer(directoryName, filename, selected_style)
     
     return send_from_directory("images", newImg)
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    app.run(host='0.0.0.0')
